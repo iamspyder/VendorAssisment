@@ -63,4 +63,8 @@ page 50202 "Vendor Rating Card"
 
 
 
+
+
+
+
 }

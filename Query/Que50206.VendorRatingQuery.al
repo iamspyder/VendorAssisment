@@ -29,6 +29,8 @@ query 50206 "VendorRatingQuery"
             {
 
             }
+
+
             column(CreditPeriod; "Credit Period")
             {
             }
@@ -68,10 +70,11 @@ query 50206 "VendorRatingQuery"
     //     Text002: Label 'Choose one of the following options:';
 
 
-    trigger OnBeforeOpen()
-    begin
-        rec_vendor.SetFilter(Price, '>%1', 4);
-    end;
+    // trigger OnBeforeOpen()
+    // begin
+
+    //     rec_vendor.SetFilter(Price, '<%1', 3);
+    // end;
 
     // trigger OnBeforeOpen()
     // begin
