@@ -50,6 +50,8 @@ page 50201 "Vendor Rating List"
                 {
                     ToolTip = 'Specifies the value of the Over all Rating field.';
                 }
+
+
             }
         }
 
@@ -72,14 +74,20 @@ page 50201 "Vendor Rating List"
                 trigger OnAction()
                 begin
 
-                    if (Rec_ven.Price < 5) and (Rec_ven."Credit Period" > 3) then begin
-                        Rec.SetFilter("Price", '>=3');
-                    end;
-                    //  Rec.SetFilter(("Material Quality", '>2' ) OR ("Price", '>=3') );
+                    // if (Rec_ven.Price < 5) and (Rec_ven."Credit Period" > 3) then begin
+                    //     Rec.SetFilter("Price", '>=3');
+                    // end;
+                    // //  Rec.SetFilter(("Material Quality", '>2' ) OR ("Price", '>=3') );
 
-                    // this code is for filters in vendor table 
+                    // // this code is for filters in vendor table 
 
                     Rec.SetFilter("Price", '>=3');
+
+
+
+
+
+
 
                 end;
 
@@ -119,36 +127,14 @@ page 50201 "Vendor Rating List"
 
 
 
-        MyFieldRef: FieldRef;
-        MyFieldRef2: FieldRef;
-        MyFieldRef3: FieldRef;
-        myfilter: Text;
-        CustomerRecref: RecordRef;
-        Count: Integer;
-        Text000: Label '%1 records were retrieved.';
+    // MyFieldRef: FieldRef;
+    // MyFieldRef2: FieldRef;
+    // MyFieldRef3: FieldRef;
+    // myfilter: Text;
+    // CustomerRecref: RecordRef;              /// these variable we have taken for no of counts
+    // Count: Integer;
+    // Text000: Label '%1 records were retrieved.';
 
 
-    //     actions 
-    //     {
-    //         // Adds the action called "My Actions" to the Action menu 
-    //         area(Processing)
-    //         {
-    // #if not CLEAN22
-    //             // group(filter)
-    //             // {
-    //             //     Caption = 'filter';
 
-    //                 action("VendorRatingQuery")
-    //                 {
-    //                     Promoted = true;
-    //                     PromotedCategory = Process;
-    //                     ApplicationArea = All;
-    //                     Caption = 'eeee';
-
-    //                 }
-
-
-    //         }
-
-    //     }
 }

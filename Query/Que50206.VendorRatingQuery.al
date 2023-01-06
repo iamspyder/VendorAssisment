@@ -30,10 +30,6 @@ query 50206 "VendorRatingQuery"
 
             }
 
-
-            column(CreditPeriod; "Credit Period")
-            {
-            }
             column(MaterialQuality; "Material Quality")
             {
             }
