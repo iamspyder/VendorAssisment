@@ -94,10 +94,7 @@ page 50201 "Vendor Rating List"
 
 
 
-
-
-
-                // new trial for getting count of vendors
+                //     --------------------------------    new trial for getting count of vendors   ------------------------------------------------
 
                 // begin
                 //     CustomerRecref.Open(Database::"Vendor Rating");
@@ -120,7 +117,16 @@ page 50201 "Vendor Rating List"
 
             }
 
-            //--------------------------------- this action is test for fetting values from user  -----------------------------------------
+
+
+
+            //      --------------------------------    new trial for getting count of vendors   ------------------------------------------------
+
+
+
+
+
+            //--------------------------------- this action is for filtering values from user choise  -----------------------------------------
 
             action(ToGetValueFromUser)
 
@@ -132,6 +138,9 @@ page 50201 "Vendor Rating List"
                     Options := Text000;
                     // Sets the default to option 3  
                     Selected := Dialog.StrMenu(Options, 3, Text002);
+
+
+
                     //  Rec.SetFilter("Price", '>=3');
                     // Message(Text001, Selected);
                     // if (Selected = 1) then begin
@@ -148,12 +157,12 @@ page 50201 "Vendor Rating List"
                             begin
                                 Rec.SetFilter("Price", '>=3');
 
-
                             end;
 
                         2:
                             begin
                                 Rec.SetFilter("Material Quality", '>=3');
+
                             end;
 
 
@@ -189,7 +198,20 @@ page 50201 "Vendor Rating List"
             }
 
 
-            //        --------------------------------- this action is test for fetting values from user  -----------------------------------------
+            //        --------------------------------- this action is for filtering values from user choise  -----------------------------------------
+
+
+            action(ActionName)
+            {
+                ApplicationArea = All;
+                Caption = 'Clear All';
+                trigger OnAction()
+                begin
+
+
+
+                end;
+            }
 
         }
     }
@@ -202,7 +224,8 @@ page 50201 "Vendor Rating List"
 
         Options: Text[30];
         Selected: Integer;
-        Text000: Label 'Price,Material Quality,On Time Delivery,Credit Period,Over all Rating';
+        Selected2: Integer;
+        Text000: Label 'Prs,Mt Q,On Tm Del,Cr P,Rat';
         Text001: Label 'You selected option %1.';
         Text002: Label 'Choose one of the following options:';
         Text003: Label 'Greater than 2,Greater than 3,Greater than 5';
