@@ -8,6 +8,7 @@ page 50201 "Vendor Rating List"
     SourceTable = "Vendor Rating";
     UsageCategory = Lists;
     QueryCategory = 'Vendor Rating List';
+    CardPageId = "Vendor Rating Card";
 
 
     layout
@@ -118,6 +119,78 @@ page 50201 "Vendor Rating List"
                 // end;
 
             }
+
+            //--------------------------------- this action is test for fetting values from user  -----------------------------------------
+
+            action(ToGetValueFromUser)
+
+            {
+                ApplicationArea = All;
+                Caption = 'get value from user';
+                trigger OnAction()
+                begin
+                    Options := Text000;
+                    // Sets the default to option 3  
+                    Selected := Dialog.StrMenu(Options, 3, Text002);
+                    //  Rec.SetFilter("Price", '>=3');
+                    // Message(Text001, Selected);
+                    // if (Selected = 1) then begin
+                    //     Rec.SetFilter("Price", '>=3');
+                    // end;
+
+                    // if (Selected = 2) then begin
+                    //     Rec.SetFilter("Material Quality", '>=3');
+                    // end;
+
+                    case Selected of
+
+                        1:
+                            begin
+                                Rec.SetFilter("Price", '>=3');
+
+
+                            end;
+
+                        2:
+                            begin
+                                Rec.SetFilter("Material Quality", '>=3');
+                            end;
+
+
+                        3:
+                            begin
+                                Rec.SetFilter("On Time Delivery", '>=3');
+                            end;
+
+
+                        4:
+                            begin
+                                Rec.SetFilter("Credit Period", '>=3');
+                            end;
+
+                        5:
+                            begin
+                                Rec.SetFilter("Over all Rating", '>=3');
+                            end;
+
+                        else
+                            Message('You have not Selected any Filter.');
+
+                    end;
+
+
+
+                end;
+
+
+
+
+
+            }
+
+
+            //        --------------------------------- this action is test for fetting values from user  -----------------------------------------
+
         }
     }
 
@@ -125,6 +198,24 @@ page 50201 "Vendor Rating List"
         Rec_ven: Record "Vendor Rating";
 
 
+        //   these variables are for getting value from user  ----------
+
+        Options: Text[30];
+        Selected: Integer;
+        Text000: Label 'Price,Material Quality,On Time Delivery,Credit Period,Over all Rating';
+        Text001: Label 'You selected option %1.';
+        Text002: Label 'Choose one of the following options:';
+        Text003: Label 'Greater than 2,Greater than 3,Greater than 5';
+
+
+    //   these variables are for getting value from user  -------------
+
+
+
+
+
+
+    // these are for No of counts ------------
 
 
     // MyFieldRef: FieldRef;
@@ -135,6 +226,6 @@ page 50201 "Vendor Rating List"
     // Count: Integer;
     // Text000: Label '%1 records were retrieved.';
 
-
+    // these are for No of counts  -------------
 
 }

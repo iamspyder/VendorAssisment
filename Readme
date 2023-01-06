@@ -1,0 +1,92 @@
+/*
+
+
+
+                                                   Vendor Rating  Extention for Bussines central
+
+                    We are working to filter the vendors by our need like we want price range or material quality things like that
+
+
+   
+   Working on Query -
+
+   we created queries to filter the vendors by our need
+
+   setfilter - set filter used as trigger on prosses button set range is also the same 
+   
+   query - we create a query to filter our needs it look in smart list
+
+   join query - we created a join querry to add two table fileds   (%1 and %2 are like in c# we use to print the values)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+/*
+
+
+                                               Tips and tricks 
+
+
+
+
+1 -  for creating pages and cards -
+  whenever you want to create a new page and card first create a list page where   UsageCategory = Lists; and create page after that you add card page 
+  and to attach card to list page use   CardPageId = "Vendor Rating Card"; in the list page part
+
+
+
+
+
+
+
+
+
+
+
+*

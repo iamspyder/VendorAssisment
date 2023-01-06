@@ -16,7 +16,7 @@ query 50207 "Query with vendor name"
 
             dataitem(Vendor_detail; Vendor)
             {
-                DataItemLink = "No." = VendorRating."Vendor Id";
+                DataItemLink = "No." = VendorRating."Vendor Id";   // here we are joinng vendor table name field with our vendor rating table 
                 SqlJoinType = InnerJoin;
 
                 column(Vendor_Name; Name)
@@ -43,7 +43,7 @@ query 50207 "Query with vendor name"
             column(Price; Price)
             {
                 //  Method = Average;
-                ColumnFilter = Price = filter(> 3);
+                ColumnFilter = Price = filter(> 3);  // col filter is using for filtering columns 
             }
 
 
@@ -51,8 +51,34 @@ query 50207 "Query with vendor name"
         }
     }
 
+
+
+
+
+
+
     trigger OnBeforeOpen()
     begin
-        CurrQuery.SetFilter(OverallRating, '>3');
+        // CurrQuery.SetFilter(OverallRating, '>3');  // set filter is on trriger
+
     end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // trigger OnBeforeOpen()
+    // begin
+    //    // CurrQuery.SetFilter(OverallRating, '>3');  // set filter is on trriger
+
+    // end;
 }
