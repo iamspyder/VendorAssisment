@@ -27,10 +27,7 @@ page 50201 "Vendor Rating List"
                     ToolTip = 'Specifies the value of the Vendor Id field.';
                 }
 
-                // field("Vendor Name"; Rec."Vendor Name")
-                // {
-                //     ToolTip = 'Specifies the value of the Vendor Id field.';
-                // }
+
                 field(Price; Rec.Price)
                 {
                     ToolTip = 'Specifies the value of the Price field.';
@@ -120,13 +117,13 @@ page 50201 "Vendor Rating List"
 
 
 
-            //      --------------------------------    new trial for getting count of vendors   ------------------------------------------------
+            //      --------------------------------  end   new trial for getting count of vendors   ------------------------------------------------
 
 
 
 
 
-            //--------------------------------- this action is for filtering values from user choise  -----------------------------------------
+            //--------------------------------- start this action is for filtering values from user choise  -----------------------------------------
 
             action(ToGetValueFromUser)
 
@@ -135,9 +132,10 @@ page 50201 "Vendor Rating List"
                 Caption = 'get value from user';
                 trigger OnAction()
                 begin
-                    Options := Text000;
+                    // Options := Text000[100];
+                    Options := 'Price,Material Quantity,On Time Delivery,Credit Period,Over all Rating';
                     // Sets the default to option 3  
-                    Selected := Dialog.StrMenu(Options, 3, Text002);
+                    Selected := Dialog.StrMenu(Options, 0, Text002);
 
 
 
@@ -155,7 +153,8 @@ page 50201 "Vendor Rating List"
 
                         1:
                             begin
-                                Rec.SetFilter("Price", '>=3');
+
+                                Rec.SetFilter("Price", '<3');
 
                             end;
 
@@ -198,20 +197,298 @@ page 50201 "Vendor Rating List"
             }
 
 
-            //        --------------------------------- this action is for filtering values from user choise  -----------------------------------------
+            //        --------------------------------- end this action is for filtering values from user choise  -----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //        --------------------------------- strat this action is for filtering values from user Operator  -----------------------------------------
 
 
             action(ActionName)
             {
                 ApplicationArea = All;
-                Caption = 'Clear All';
+                Caption = 'Filter By oprators';
                 trigger OnAction()
                 begin
+
+
+                    Options := 'Price,Material Quantity,On Time Delivery,Credit Period,Over all Rating';
+
+
+                    Selected := Dialog.StrMenu(Options, 0, Text002);
+
+                    NUM := ' 1 One, 2 Two, 3 Three, 4 Four, 5 Five';
+                    OPR := ' " = " Equal To , " < " Less Than , " > " Greater Than, " <= " Less Than EqualTo , " >= " Greater Than EqualTo';
+
+
+
+
+                    case Selected of
+
+                        1:
+                            begin
+
+                                Options := NUM;
+                                Selected := Dialog.StrMenu(Options, 0, Text003);  // this selected is for Number you select
+                                // Message(text001, Selected);
+
+                                Options := OPR;
+                                Selected2 := Dialog.StrMenu(Options, 0, Text004);
+                                // Selected = '>='+;
+                                //  Message(text001, Selected2);
+                                case Selected2 of
+
+                                    1:
+                                        begin
+
+                                            Rec.SetFilter("Price", '=' + format(Selected));  // here we are passing [ format selected ] to convert selected value into integer
+                                        end;
+
+                                    2:
+                                        begin
+                                            Rec.SetFilter("Price", '<' + format(Selected));
+                                        end;
+
+                                    3:
+                                        begin
+                                            Rec.SetFilter("Price", '>' + format(Selected));
+                                        end;
+                                    4:
+                                        begin
+                                            Rec.SetFilter("Price", '<=' + format(Selected));
+                                        end;
+
+                                    5:
+                                        begin
+                                            Rec.SetFilter("Price", '>=' + format(Selected));
+                                        end;
+
+                                    //    Rec.SetFilter("Price", format(Selected2) + format(Selected));
+
+                                    else
+                                        Message('You have not Selected any Filter.');
+
+                                end;
+
+
+                            end;
+
+                        2:
+                            begin
+
+                                Options := NUM;
+                                Selected := Dialog.StrMenu(Options, 0, Text003);
+
+                                Options := OPR;
+                                Selected2 := Dialog.StrMenu(Options, 0, Text004);
+
+                                case Selected2 of
+
+                                    1:
+                                        begin
+
+                                            Rec.SetFilter("Material Quality", '=' + format(Selected));
+                                        end;
+
+                                    2:
+                                        begin
+                                            Rec.SetFilter("Material Quality", '<' + format(Selected));
+                                        end;
+
+                                    3:
+                                        begin
+                                            Rec.SetFilter("Material Quality", '>' + format(Selected));
+                                        end;
+                                    4:
+                                        begin
+                                            Rec.SetFilter("Material Quality", '<=' + format(Selected));
+                                        end;
+
+                                    5:
+                                        begin
+                                            Rec.SetFilter("Material Quality", '>=' + format(Selected));
+                                        end;
+
+
+                                    else
+                                        Message('You have not Selected any Filter.');
+
+                                end;
+
+
+
+
+                            end;
+
+
+                        3:
+                            begin
+
+                                Options := NUM;
+                                Selected := Dialog.StrMenu(Options, 0, Text003);
+
+                                Options := OPR;
+                                Selected2 := Dialog.StrMenu(Options, 0, Text004);
+
+                                case Selected2 of
+
+                                    1:
+                                        begin
+
+                                            Rec.SetFilter("On Time Delivery", '=' + format(Selected));
+                                        end;
+
+                                    2:
+                                        begin
+                                            Rec.SetFilter("On Time Delivery", '<' + format(Selected));
+                                        end;
+
+                                    3:
+                                        begin
+                                            Rec.SetFilter("On Time Delivery", '>' + format(Selected));
+                                        end;
+                                    4:
+                                        begin
+                                            Rec.SetFilter("On Time Delivery", '<=' + format(Selected));
+                                        end;
+
+                                    5:
+                                        begin
+                                            Rec.SetFilter("On Time Delivery", '>=' + format(Selected));
+                                        end;
+
+
+                                    else
+                                        Message('You have not Selected any Filter.');
+
+                                end;
+
+                            end;
+
+
+                        4:
+                            begin
+
+
+
+                                Options := NUM;
+                                Selected := Dialog.StrMenu(Options, 0, Text003);
+
+                                Options := OPR;
+                                Selected2 := Dialog.StrMenu(Options, 0, Text004);
+
+                                case Selected2 of
+
+                                    1:
+                                        begin
+
+                                            Rec.SetFilter("Credit Period", '=' + format(Selected));
+                                        end;
+
+                                    2:
+                                        begin
+                                            Rec.SetFilter("Credit Period", '<' + format(Selected));
+                                        end;
+
+                                    3:
+                                        begin
+                                            Rec.SetFilter("Credit Period", '>' + format(Selected));
+                                        end;
+                                    4:
+                                        begin
+                                            Rec.SetFilter("Credit Period", '<=' + format(Selected));
+                                        end;
+
+                                    5:
+                                        begin
+                                            Rec.SetFilter("Credit Period", '>=' + format(Selected));
+                                        end;
+
+
+                                    else
+                                        Message('You have not Selected any Filter.');
+
+
+
+
+                                end;
+
+
+
+
+
+                            end;
+
+                        5:
+                            begin
+
+
+                                Options := NUM;
+                                Selected := Dialog.StrMenu(Options, 0, Text003);
+
+                                Options := OPR;
+                                Selected2 := Dialog.StrMenu(Options, 0, Text004);
+
+                                case Selected2 of
+
+                                    1:
+                                        begin
+
+                                            Rec.SetFilter("Over all Rating", '=' + format(Selected));
+                                        end;
+
+                                    2:
+                                        begin
+                                            Rec.SetFilter("Over all Rating", '<' + format(Selected));
+                                        end;
+
+                                    3:
+                                        begin
+                                            Rec.SetFilter("Over all Rating", '>' + format(Selected));
+                                        end;
+                                    4:
+                                        begin
+                                            Rec.SetFilter("Over all Rating", '<=' + format(Selected));
+                                        end;
+
+                                    5:
+                                        begin
+                                            Rec.SetFilter("Over all Rating", '>=' + format(Selected));
+                                        end;
+
+
+                                    else
+                                        Message('You have not Selected any Filter.');
+
+                                end;
+
+
+                            end;
+
+                        else
+                            Message('You have not Selected any Filter.');
+
+                    end;
+
 
 
 
                 end;
             }
+
+
+            //        --------------------------------- end this action is for filtering values from user Operator  -----------------------------------------
 
         }
     }
@@ -222,13 +499,19 @@ page 50201 "Vendor Rating List"
 
         //   these variables are for getting value from user  ----------
 
-        Options: Text[30];
+        Options: Text[100];
+        Options2: Integer;
         Selected: Integer;
         Selected2: Integer;
-        Text000: Label 'Prs,Mt Q,On Tm Del,Cr P,Rat';
+        // Text000: Label 'Prs,Mt Q,On Tm Del,Cr P,Rat';
         Text001: Label 'You selected option %1.';
         Text002: Label 'Choose one of the following options:';
-        Text003: Label 'Greater than 2,Greater than 3,Greater than 5';
+        Text003: Label 'Choose the No of Rating You Want';
+        Text004: Label 'Choose the Operation You Want';
+        NUM: Text[100];
+        OPR: Text[100];
+
+        opop: Option;
 
 
     //   these variables are for getting value from user  -------------

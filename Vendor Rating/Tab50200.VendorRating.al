@@ -18,33 +18,29 @@ table 50200 "Vendor Rating"
             DataClassification = ToBeClassified;
         }
 
-        // field(3; "Vendor Name"; Text[50])
-        // {
-        //     Caption = 'Vendor Name';
-        //     TableRelation = Vendor.Name;
-        //     Editable = false;
-        //     DataClassification = ToBeClassified;
-        // }
-
-
         field(4; "On Time Delivery"; Integer)
         {
             Caption = 'On Time Delivery';
             DataClassification = ToBeClassified;
+
+            // OptionMembers = 1,two,three,four,five;
         }
         field(5; Price; Integer)
         {
             Caption = 'Price';
+            // OptionMembers = one,two,three,four,five;
             DataClassification = ToBeClassified;
         }
         field(6; "Credit Period"; Integer)
         {
             Caption = 'Credit Period';
             DataClassification = ToBeClassified;
+            // OptionMembers = one,two,three,four,five;
         }
         field(7; "Material Quality"; Integer)
         {
             Caption = 'Material Quality';
+            //  OptionMembers = one,two,three,four,five;
             DataClassification = ToBeClassified;
         }
         field(8; "Over all Rating"; Integer)
@@ -52,6 +48,8 @@ table 50200 "Vendor Rating"
             Caption = 'Over all Rating';
             DataClassification = ToBeClassified;
         }
+
+
     }
     keys
     {
