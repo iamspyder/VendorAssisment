@@ -76,8 +76,7 @@
 
 
 1 -  for creating pages and cards -
-  whenever you want to create a new page and card first create a list page where   UsageCategory = Lists; and create page after that you add card page 
-  and to attach card to list page use   CardPageId = "Vendor Rating Card"; in the list page part
+  whenever you want to create a new page and card first create a list page where   UsageCategory = Lists; and create page after that you need card page and to attach card to list page use   CardPageId = "Vendor Rating Card"; in the list page part
 
 
 

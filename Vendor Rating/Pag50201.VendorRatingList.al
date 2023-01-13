@@ -141,6 +141,7 @@ page 50201 "Vendor Rating List"
 
                     //  Rec.SetFilter("Price", '>=3');
                     // Message(Text001, Selected);
+
                     // if (Selected = 1) then begin
                     //     Rec.SetFilter("Price", '>=3');
                     // end;
@@ -490,6 +491,8 @@ page 50201 "Vendor Rating List"
 
             //        --------------------------------- end this action is for filtering values from user Operator  -----------------------------------------
 
+
+
         }
     }
 
@@ -499,17 +502,17 @@ page 50201 "Vendor Rating List"
 
         //   these variables are for getting value from user  ----------
 
-        Options: Text[100];
+        Options: Text[150];
         Options2: Integer;
         Selected: Integer;
         Selected2: Integer;
         // Text000: Label 'Prs,Mt Q,On Tm Del,Cr P,Rat';
         Text001: Label 'You selected option %1.';
-        Text002: Label 'Choose one of the following options:';
+        Text002: Label 'Choose one of the following Rating you Want to filter:';
         Text003: Label 'Choose the No of Rating You Want';
         Text004: Label 'Choose the Operation You Want';
-        NUM: Text[100];
-        OPR: Text[100];
+        NUM: Text[150];
+        OPR: Text[200];
 
         opop: Option;
 

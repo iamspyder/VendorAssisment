@@ -31,7 +31,6 @@ page 50207 "Vendor Item Rating Card"
                     trigger OnValidate()
                     begin
 
-
                         if (Rec."Credit Period" >= 5) then begin
                             Error('no is greater than 5');
                         end;
