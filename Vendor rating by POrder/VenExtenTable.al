@@ -45,4 +45,16 @@ tableextension 50223 "vendor Ex table" extends Vendor
 
 
     }
+    fieldgroups
+    {
+
+        addlast(Brick; "Credit Period")
+        {
+
+        }
+        addlast(DropDown; "Credit Period")
+        {
+
+        }
+    }
 }

@@ -32,6 +32,7 @@ table 50221 "Vendor Rating PO 2"
 
         }
 
+
         // field(10; "venaa"; Text[150])
         // {
         //     Caption = 'Vendor Rating aa';

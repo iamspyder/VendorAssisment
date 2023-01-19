@@ -29,7 +29,7 @@ page 50223 "Vendor Rating Card By PO"
                         CurrPage.Update();
                     end;
                 }
-                field("Buy From Venodr No."; Rec."Buy From Vendor No.")
+                field("Buy From Vendor No."; Rec."Buy From Vendor No.")
                 {
                     ToolTip = 'Specifies the value of the Buy From Venodr No. field.';
 
@@ -41,7 +41,7 @@ page 50223 "Vendor Rating Card By PO"
 
                 field("Vendr rr"; Rec."Vendor Rating")
                 {
-                    Caption = 'Payble Amount';
+                    Caption = 'Total Purchase Amount';
                     ToolTip = 'Specifies the value of the Buy From Vendor Name field.';
                 }
                 // field("Vendaar"; Rec.venaa)

@@ -12,6 +12,7 @@ page 50201 "Vendor Rating List"
 
 
     layout
+
     {
 
         area(content)
