@@ -81,6 +81,7 @@ page 50223 "Vendor Rating Card By PO"
                         summ := Rec.OnTimeDelivery + Rec.Price + Rec."Material Quality" + Rec."Credit Period";
                         avg := summ / 4;
                         Rec."Over all Rating" := avg;
+                        CurrPage.Update();
                     end;
                 }
                 field(Price; Rec.Price)
@@ -94,6 +95,7 @@ page 50223 "Vendor Rating Card By PO"
                         summ := Rec.OnTimeDelivery + Rec.Price + Rec."Material Quality" + Rec."Credit Period";
                         avg := summ / 4;
                         Rec."Over all Rating" := avg;
+                        CurrPage.Update();
                     end;
 
                 }

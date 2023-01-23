@@ -61,6 +61,7 @@ pageextension 50232 "Vendor Lookup Extention" extends "Vendor Lookup"
                             begin
 
                                 Rec.SetFilter("Price Rating", '>=3');
+                               
 
                             end;
 

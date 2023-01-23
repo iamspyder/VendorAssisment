@@ -84,7 +84,6 @@ table 50221 "Vendor Rating PO 2"
 
     }
 
-
     keys
     {
         key(PK; VRPO)
@@ -97,4 +96,11 @@ table 50221 "Vendor Rating PO 2"
         sums: Integer;
         vendorno: text;
 
+
+    trigger OnInsert()
+    var
+        myInt: Integer;
+    begin
+
+    end;
 }
